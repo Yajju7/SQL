@@ -1,0 +1,251 @@
+Order by:
+SELECT * FROM employees ORDER BY SALARY DESC;
+"salary"
+"salary"
+240000
+120000
+100000
+90000
+83000
+60000
+17000
+17000
+14000
+13500
+13000
+12000
+11000
+9000
+8600
+8400
+8200
+8200
+8000
+7900
+7800
+7700
+7000
+6900
+6500
+6500
+6200
+6000
+4800
+4800
+4400
+4200
+4000
+3900
+3100
+2900
+2800
+2700
+2600
+2500
+
+SELECT DISTINCT salary FROM employees ORDER BY salary DESC;
+"salary"
+"salary"
+240000
+120000
+100000
+90000
+83000
+60000
+17000
+14000
+13500
+13000
+12000
+11000
+9000
+8600
+8400
+8200
+8000
+7900
+7800
+7700
+7000
+6900
+6500
+6200
+6000
+4800
+4400
+4200
+4000
+3900
+3100
+2900
+2800
+2700
+2600
+2500
+
+SELECT DISTINCT job_id, first_name salary FROM employees ORDER BY job_id, salary DESC;
+"job_id"	"first_name"	"salary"
+2	"Shelley"	120000
+3	"Jennifer"	4400
+6	"Daniel"	9000
+6	"John"	8200
+6	"Jose Manuel"	7800
+6	"Ismael"	7700
+6	"Luis"	6900
+7	"Nancy"	12000
+8	"Susan"	6500
+9	"Alexander"	90000
+9	"David"	4800
+9	"Valli"	4800
+9	"Diana"	4200
+10	"Michael"	13000
+11	"Pat"	6000
+12	"Hermann"	100000
+13	"Alexander"	3100
+13	"Shelli"	2900
+13	"Sigal"	2800
+13	"Guy"	2600
+13	"Karen"	2500
+14	"Den"	11000
+15	"John"	14000
+15	"Karen"	13500
+16	"Jonathon"	8600
+16	"Jack"	8400
+16	"Kimberely"	7000
+16	"Charles"	6200
+17	"Sarah"	4000
+17	"Britney"	3900
+18	"Irene"	2700
+19	"Adam"	8200
+19	"Matthew"	8000
+19	"Payam"	7900
+19	"Shanta"	6500
+21	"Yajnesh"	240000
+21	"Bruce"	60000
+22	"William"	83000
+22	"Lex"	17000
+22	"Neena"	17000
+
+SELECT employee_id,  first_name, last_name FROM employees ORDER BY  first_name LIMIT 5;
+"employee_id"	"first_name"	"last_name"
+121	"Adam"	"Fripp"
+115	"Alexander"	"Khoo"
+103	"Alexander"	"Hunold"
+193	"Britney"	"Everett"
+104	"Bruce"	"Ernst"
+
+SELECT employee_id, first_name, last_name, salary FROM employees WHERE salary = (
+	SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 );
+"employee_id"	"first_name"	"last_name"	"salary"
+100	"Yajnesh"	"Sk"	240000
+
+SELECT employee_id, first_name, last_name, salary FROM employees ORDER BY  salary DESC OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;
+"employee_id"	"first_name"	"last_name"	"salary"
+104	"Bruce"	"Ernst"	60000
+101	"Neena"	"Kochhar"	17000
+102	"Lex"	"De Haan"	17000
+145	"John"	"Russell"	14000
+146	"Karen"	"Partners"	13500
+
+SELECT first_name FROM employees ORDER BY salary ASC OFFSET 1 ROWS FETCH NEXT 2 ROWS ONLY; 
+"first_name"
+"Guy"
+"Irene"
+
+SELECT employee_id, first_name, last_name, salary FROM employees WHERE salary > 14000 ORDER BY salary DESC;
+"employee_id"	"first_name"	"last_name"	"salary"
+100	"Yajnesh"	"Sk"	240000
+205	"Shelley"	"Higgins"	120000
+204	"Hermann"	"Baer"	100000
+103	"Alexander"	"Hunold"	90000
+206	"William"	"Gietz"	83000
+104	"Bruce"	"Ernst"	60000
+102	"Lex"	"De Haan"	17000
+101	"Neena"	"Kochhar"	17000
+
+SELECT email FROM employees WHERE salary = 14000 ORDER BY salary DESC;
+"email"
+"john.russell@sqlpws.org"
+
+SELECT employee_id, first_name, last_name, department_id FROM employees WHERE department_id = 5 ORDER BY first_name;
+"employee_id"	"first_name"	"last_name"	"department_id"
+121	"Adam"	"Fripp"	5
+193	"Britney"	"Everett"	5
+126	"Irene"	"Mikkilineni"	5
+120	"Matthew"	"Weiss"	5
+122	"Payam"	"Kaufling"	5
+192	"Sarah"	"Bell"	5
+123	"Shanta"	"Vollman"	5
+
+SELECT employee_id, first_name, last_name, department_id from employees WHERE last_name='Sk'
+"employee_id"	"first_name"	"last_name"	"department_id"
+100	"Yajnesh"	"Sk"	9
+
+SELECT first_name, last_name, salary FROM employees WHERE salary BETWEEN 9000 AND 120000 ORDER BY salary;
+"first_name"	"last_name"	"salary"
+"Daniel"	"Faviet"	9000
+"Den"	"Raphaely"	11000
+"Nancy"	"Greenberg"	12000
+"Michael"	"Hartstein"	13000
+"Karen"	"Partners"	13500
+"John"	"Russell"	14000
+"Neena"	"Kochhar"	17000
+"Lex"	"De Haan"	17000
+"Bruce"	"Ernst"	60000
+"William"	"Gietz"	83000
+"Alexander"	"Hunold"	90000
+"Hermann"	"Baer"	100000
+"Shelley"	"Higgins"	120000
+
+SELECT employee_id, first_name, last_name FROM employees WHERE first_name LIKE 'Y%' OR first_name LIKE 'Y%' ORDER BY first_name;
+"employee_id"	"first_name"	"last_name"
+177	"Jack"	"Livingston"
+200	"Jennifer"	"Whalen"
+145	"John"	"Russell"
+110	"John"	"Chen"
+176	"Jonathon"	"Taylor"
+112	"Jose Manuel"	"Urman"
+100	"Yajnesh"	"Sk"
+
+SELECT employee_id,  first_name, last_name, hire_date FROM employees WHERE hire_date BETWEEN '1999-01-01' AND '2000-12-31' ORDER BY hire_date;
+"employee_id"	"first_name"	"last_name"	"hire_date"
+107	"Diana"	"Lorentz"	"1999-02-07"
+178	"Kimberely"	"Grant"	"1999-05-24"
+119	"Karen"	"Colmenares"	"1999-08-10"
+113	"Luis"	"Popp"	"1999-12-07"
+179	"Charles"	"Johnson"	"2000-01-04"
+
+SELECT employee_id, first_name, last_name, phone_number FROM employees WHERE phone_number IS NULL;
+"employee_id"	"first_name"	"last_name"	"phone_number"
+145	"John"	"Russell"	
+146	"Karen"	"Partners"	
+176	"Jonathon"	"Taylor"	
+177	"Jack"	"Livingston"	
+178	"Kimberely"	"Grant"	
+179	"Charles"	"Johnson"	
+
+SELECT first_name, last_name, employees.department_id, departments.department_id, department_name FROM employees
+    INNER JOIN departments ON departments.department_id = employees.department_id WHERE employees.department_id IN (1 , 2, 3)
+"first_name"	"last_name"	"department_id"	"department_id-2"	"department_name"
+"Jennifer"	"Whalen"	1	1	"Administration"
+"Pat"	"Fay"	2	2	"Marketing"
+"Michael"	"Hartstein"	2	2	"Marketing"
+"Karen"	"Colmenares"	3	3	"Purchasing"
+"Guy"	"Himuro"	3	3	"Purchasing"
+"Sigal"	"Tobias"	3	3	"Purchasing"
+"Shelli"	"Baida"	3	3	"Purchasing"
+"Alexander"	"Khoo"	3	3	"Purchasing"
+
+SELECT department_id,COUNT(employee_id) headcount FROM employees GROUP BY department_id;
+"department_id"	"headcount"
+11	2
+9	3
+3	6
+5	7
+4	1
+10	6
+6	5
+2	2
+7	1
+1	1
+8	6

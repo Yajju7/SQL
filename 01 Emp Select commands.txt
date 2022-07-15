@@ -5,9 +5,81 @@ region_id	region_name
 24	AUSTRALIA
 25	AMERICA
 
+SELECT * FROM Countries;
+country_id	country_name	region_id
+11	India	23
+12	Sri Lanka	23
+13	Pakistan	23
+14	Bangladesh	23
+15	Russia	23
+16	South Korea	23
+17	Germany	22
+18	Italy	22
+19	France	22
+20	Ukraine	22
+21	Spain	22
+22	Romania	22
+23	USA	25
+24	Canada	25
+25	Mexico	25
 
 
+SELECT * FROM countries;
+location_id	street_address	postal_code	city	state_province	country_id
+1400	2014 Jabberwocky Rd	26192	Southlake	Texas	23
+1500	2011 Interiors Blvd	99236	South San Francisco	California	23
+1700	2004 Charade Rd	98199	Seattle	Washington	23
+1800	147 Spadina Ave	M5V 2L7	Toronto	Ontario	24
+2400	8204 Arthur St	NULL	London	NULL	24
+2500	Magdalen Centre, The Oxford Science Park	OX9 9ZB	Oxford	Oxford	23
+2700	LKJUIN	55688	aanich	LOkitan	15
+1600	Lalbhagh	575008	Mangalore	Karnataka	11
+1520	JK	54000	Bangalore	Karnataka	11
+6222	LK	58524	AK nagar	Delhi	11
+6225	MTE	95685	platina	Mohenjodaro	13
+2466	8204 Arthur St	NULL	London	NULL	24
+2550	Jenduk street	80547	Seoul	Seoul	16
+2722	Schwanthalerstr. 7031	80925	Munich	Bavaria	15
 
+SELECT * From jobs;
+job_id	job_title	min_salary	max_salary
+1	Public Accountant	42000	90000
+2	Accounting Manager	82000	160000
+3	Administration Assistant	30000	60000
+4	President	200000	400000
+5	Administration Vice President	150000	300000
+6	Accountant	42000	90000
+7	Finance Manager	82000	160000
+8	Human Resources Representative	40000	90000
+9	Programmer	40000	100000
+10	Marketing Manager	90000	150000
+11	Marketing Representative	40000	90000
+12	Public Relations Representative	45000	105000
+13	Purchasing Clerk	25000	55000
+14	Purchasing Manager	80000	150000
+15	Sales Manager	100000	200000
+16	Sales Representative	60000	120000
+17	Shipping Clerk	25000	55000
+18	Stock Clerk	20000	50000
+19	Stock Manager	550000	850000
+20	UX/UI	25000	55000
+21	Full Stack Developer	200000	500000
+22	Backend Software Developer	550000	850000
+
+
+Select * From Departments
+department_id	department_name	location_id
+1	Administration	1700
+2	Marketing	1800
+3	Purchasing	1700
+4	Human Resources	2400
+5	Shipping	1500
+6	IT	1400
+7	Public Relations	2700
+8	Sales	2500
+9	Executive	1700
+10	Finance	1700
+11	Accounting	1700
 
 
 Select * from employees;
@@ -52,6 +124,39 @@ employee_id	first_name	last_name	email	phone_number	hire_date	job_id	salary	mana
 204	Hermann	Baer	hermann.baer@sqlpws.org	515.123.8888	1994-06-07	12	100000	101	7
 205	Shelley	Higgins	shelley.higgins@sqlpws.org	515.123.8080	1994-06-07	2	120000	101	11
 206	William	Gietz	william.gietz@sqlpws.org	515.123.8181	1994-06-07	22	83000	205	11
+
+SELECT * FROM dependents;
+"dependent_id"	"first_name"	"last_name"	"relationship"	"employee_id"
+1	"Penelope"	"Gietz"	"Child"	206
+2	"Nick"	"Higgins"	"Child"	205
+3	"Ed"	"Whalen"	"Child"	200
+4	"Jennifer"	"King"	"Child"	100
+5	"Johnny"	"Kochhar"	"Child"	101
+6	"Bette"	"De Haan"	"Child"	102
+7	"Grace"	"Faviet"	"Child"	109
+8	"Matthew"	"Chen"	"Child"	110
+9	"Joe"	"Sciarra"	"Child"	111
+10	"Christian"	"Urman"	"Child"	112
+11	"Zero"	"Popp"	"Child"	113
+12	"Karl"	"Greenberg"	"Child"	108
+13	"Uma"	"Mavris"	"Child"	203
+14	"Vivien"	"Hunold"	"Child"	103
+15	"Cuba"	"Ernst"	"Child"	104
+16	"Fred"	"Austin"	"Child"	105
+17	"Helen"	"Pataballa"	"Child"	106
+18	"Dan"	"Lorentz"	"Child"	107
+19	"Bob"	"Hartstein"	"Child"	201
+20	"Lucille"	"Fay"	"Child"	202
+21	"Kirsten"	"Baer"	"Child"	204
+22	"Elvis"	"Khoo"	"Child"	115
+23	"Sandra"	"Baida"	"Child"	116
+24	"Cameron"	"Tobias"	"Child"	117
+25	"Kevin"	"Himuro"	"Child"	118
+26	"Rip"	"Colmenares"	"Child"	119
+27	"Julia"	"Raphaely"	"Child"	114
+28	"Woody"	"Russell"	"Child"	145
+29	"Alec"	"Partners"	"Child"	146
+30	"Sandra"	"Taylor"	"Child"	176
 
 
 
